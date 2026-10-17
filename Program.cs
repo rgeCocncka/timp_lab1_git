@@ -56,7 +56,7 @@ while (stage)
             Console.WriteLine("|  Product  ||   Paid? || Shipped?||Amount(rub)|");
             foreach (Goods good in GoodsList)
             {
-                if (good.isPaid() && !good.isPaid())
+                if (good.isPaid() && !good.isShipped())
                 {
                     Console.WriteLine(good.GoodsWrite());
                 }
