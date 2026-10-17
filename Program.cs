@@ -51,6 +51,7 @@ while (stage)
 
         case 2:
             Console.Clear();
+            int TotalSum = 0;
             Console.WriteLine("REPORT:");
             Console.WriteLine("________________________________________________");
             Console.WriteLine("|  Product  ||   Paid? || Shipped?||Amount(rub)|");
@@ -58,9 +59,11 @@ while (stage)
             {
                 {
                     Console.WriteLine(good.GoodsWrite());
+                    TotalSum += good.GetAmount();
                 }
             }
             Console.WriteLine("------------------------------------------------");
+            Console.WriteLine($"\nTotal sum of products: {TotalSum} rub");
             stage = false;
             break;
     }
@@ -80,6 +83,11 @@ public class Goods
         this.Paid = paid;
         this.Shipped = shipped;
         this.Amount = amount;
+    }
+
+    public int GetAmount()
+    {
+        return this.Amount;
     }
 
     public string GoodsWrite()
