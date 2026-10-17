@@ -61,7 +61,6 @@ while (stage)
                 }
             }
             Console.WriteLine("------------------------------------------------");
-            Console.WriteLine($"\nTotal amount of goods = {sumTotal} rub");
             stage = false;
             break;
     }
