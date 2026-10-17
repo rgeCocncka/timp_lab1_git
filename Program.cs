@@ -56,12 +56,12 @@ while (stage)
             Console.WriteLine("|  Product  ||   Paid? || Shipped?||Amount(rub)|");
             foreach (Goods good in GoodsList)
             {
+                if (good.isPaid() && !good.isPaid())
                 {
                     Console.WriteLine(good.GoodsWrite());
                 }
             }
             Console.WriteLine("------------------------------------------------");
-            Console.WriteLine($"\nTotal amount of goods = {sumTotal} rub");
             stage = false;
             break;
     }
@@ -81,6 +81,18 @@ public class Goods
         this.Paid = paid;
         this.Shipped = shipped;
         this.Amount = amount;
+    }
+
+    public bool isPaid()
+    {
+        if (this.Paid) return true;
+        else return false;
+    }
+
+    public bool isShipped()
+    {
+        if (this.Shipped) return true;
+        else return false;
     }
 
     public string GoodsWrite()
